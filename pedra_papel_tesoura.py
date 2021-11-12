@@ -38,6 +38,8 @@ def temporizador(msg):
      
 def jogo(lista):
     global jogador, computador
+    linha()
+    print(f'{lista[0].title()} X {lista[1].title()}')
     juntos = lista[0] + lista[1]
     if lista[0] == lista[1]:
         print(f'{cores["ciano"]}Parece que empatamos! Vamos de novo.{cores["limpa"]}')
@@ -69,6 +71,8 @@ def contagem(var1, var2):
         print(f'O {cores["ciano"]}computador{cores["limpa"]} fez mais pontos.')
     elif var1 < var2:
         print(f'{cores["magenta"]}{nome}{cores["limpa"]} fez mais pontos.')
+    elif var1 == 0 and var2 == 0:
+        print('Ninguém fez pontos.')
     else:
         print(f'O {cores["ciano"]}computador{cores["limpa"]} e o {cores["magenta"]}jogador{cores["limpa"]} fizeram a mesma quantidade de pontos.')
     
@@ -131,7 +135,7 @@ while True:
         linha()
         temporizador('Calculando a pontuação')
         break
-    
+    linha()
 # Cálculo da pontuação
 print(f'\nPontuação do {cores["ciano"]}computador{cores["limpa"]}: {computador}')
 print(f'Pontuação do {cores["magenta"]}jogador{cores["limpa"]}: {jogador}')
